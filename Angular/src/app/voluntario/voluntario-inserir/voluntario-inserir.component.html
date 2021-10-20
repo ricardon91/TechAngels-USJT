@@ -13,74 +13,80 @@
         <div class="action-bar-container"></div>
       </div>
 
-      <form action name="voluntario_form" id="voluntario_form" method="POST" >       
+      <form action name="voluntario_form" id="voluntario_form" method="POST" #voluntarioForm = "ngForm" (submit)="adicionarVoluntario(voluntarioForm)" >       
 
         <div>
           <fieldset class="module aligned">
             <div class="form-row nome">
               <div class="fieldBox-first required">
                 <label for="id_nome" title="Preenchimento obrigatório">Nome:</label><input type="text" name="nome"
-                  id="id_nome" />
+                  id="id_nome" ngModel #nome="ngModel"/>
               </div>
             </div>
             <div class="form-row cpf">
               <div class="fieldBox-first required">
                 <label for="id_cpf" title="Preenchimento obrigatório">CPF:</label><input type="text" name="cpf"
-                  maxlength="14" minlength="11" id="id_cpf" />
+                  maxlength="14" minlength="11" id="id_cpf" ngModel #cpf="ngModel"/>
               </div>
             </div>
             <div class="form-row email">
               <div class="fieldBox-first required">
                 <label for="id_email" title="Preenchimento obrigatório">E-mail:</label><input type="email" name="email"
-                  id="id_email" />
+                  id="id_email" ngModel #email="ngModel"/>
               </div>
             </div>
-            <div class="form-row confirmacao_email">
+            <!-- <div class="form-row confirmacao_email">
               <div class="fieldBox-first required">
                 <label for="id_confirmacao_email" title="Preenchimento obrigatório">Confirme E-mail:</label><input
                   type="email" name="confirmacao_email" id="id_confirmacao_email" />
+              </div>
+            </div> -->
+            <div class="form-row fone">
+              <div class="fieldBox-first required">
+                <label for="id_fone" title="Preenchimento obrigatório">Telefone:</label><input type="text"
+                  name="fone" id="id_fone" ngModel #fone="ngModel"/>
               </div>
             </div>
             <div class="form-row cep">
               <div class="fieldBox-first required">
                 <label for="id_cep" title="Preenchimento obrigatório">CEP:</label><input type="text"
-                  name="cep" id="id_cep" />
+                  name="cep" id="id_cep" ngModel #cep="ngModel"/>
               </div>
             </div>
             <div class="form-row endereco">
               <div class="fieldBox-first required">
                 <label for="id_endereco" title="Preenchimento obrigatório">Endereço:</label>
-                <input type="text" name="endereco" id="id_endereco" />
+                <input type="text" name="endereco" id="id_endereco" ngModel #endereco="ngModel"/>
               </div>
             </div>
             <div class="form-row numero">
               <div class="fieldBox-first required">
                 <label for="id_numero" title="Preenchimento obrigatório">Número:</label>
-                <input type="text" name="numero" id="id_numero" />
+                <input type="text" name="numero" id="id_numero" ngModel #numero="ngModel"/>
               </div>
             </div>
             <div class="form-row bairro">
               <div class="fieldBox-first required">
                 <label for="id_bairro" title="Preenchimento obrigatório">Bairro:</label>
-                <input type="text" name="chave" id="id_bairro" />
+                <input type="text" name="bairro" id="id_bairro" ngModel #bairro="ngModel"/>
               </div>
             </div>
             <div class="form-row cidade">
               <div class="fieldBox-first required">
                 <label for="id_cidade" title="Preenchimento obrigatório">Cidade:</label>
-                <input type="text" name="cidade" id="id_cidade" />
+                <input type="text" name="cidade" id="id_cidade" ngModel #cidade="ngModel"/>
               </div>
             </div>
             <div class="form-row uf">
               <div class="fieldBox-first required">
                 <label for="id_uf" title="Preenchimento obrigatório">UF:</label>
-                <input type="text" name="uf" id="id_uf" />
+                <input type="text" name="uf" id="id_uf" ngModel #uf="ngModel"/>
               </div>
             </div>
             <div class="form-row complemento">
               <div class="fieldBox-first required">
                 <label for="id_complemento" title="Preenchimento obrigatório">Complemento:</label>
-                <input type="text" name="complemento" id="id_complemento" />
+                <input type="text" name="complemento" id="id_complemento" ngModel #complemento="ngModel"/>
               </div>
             </div>
           </fieldset>

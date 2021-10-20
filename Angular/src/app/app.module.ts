@@ -9,6 +9,9 @@ import { VacinadoComponent } from './vacinado/vacinado.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { VoluntarioInserirComponent } from './voluntario/voluntario-inserir/voluntario-inserir.component';
 import { VoluntarioListaComponent } from './voluntario/voluntario-lista/voluntario-lista.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { VoluntarioService } from 'src/service/voluntario.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,11 @@ import { VoluntarioListaComponent } from './voluntario/voluntario-lista/voluntar
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [VoluntarioService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
