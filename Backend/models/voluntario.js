@@ -13,7 +13,11 @@ const voluntarioSchema = mongoose.Schema({
   bairro: { type: String, required: true },
   cidade: { type: String, required: true },
   uf: { type: String, required: true },
-  complemento: { type: String, required: false }
+  complemento: { type: String, required: false },
+  nascimento: { type: Date, required: true },
+  sexo: { type: String, required: true },
+  escolaridade: { type: String, required: true },
+  profissao: { type: String, required: true }
 });
 //criamos o modelo associado ao nome Voluntario e exportamos
 //tornando acessível para outros módulos da aplicação

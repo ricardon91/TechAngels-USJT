@@ -32,7 +32,11 @@ app.post('/api/voluntarios', (req, res, next) => {
         bairro: req.body.bairro,
         cidade: req.body.cidade,
         uf: req.body.uf,
-        complemento: req.body.complemento
+        complemento: req.body.complemento,
+        nascimento: req.body.nascimento,
+        sexo: req.body.sexo,
+        escolaridade: req.body.escolaridade,
+        profissao: req.body.profissao
     });
     voluntario.save();
     console.log(voluntario);

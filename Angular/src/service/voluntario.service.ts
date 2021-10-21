@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { of, Subject } from "rxjs";
 import { Voluntario } from "src/models/voluntario.model";
 
 @Injectable({ providedIn: 'root' })
@@ -31,7 +31,11 @@ export class VoluntarioService {
             bairro: string,
             cidade: string,
             uf: string,
-            complemento: string
+            complemento: string,
+            nascimento: Date,
+            sexo: string,
+            escolaridade: string,
+            profissao: string
         ) {
     const voluntario: Voluntario = {
             nome: nome,
@@ -44,7 +48,11 @@ export class VoluntarioService {
             bairro: bairro,
             cidade: cidade,
             uf: uf,
-            complemento: complemento
+            complemento: complemento,
+            nascimento: nascimento,
+            sexo: sexo,
+            escolaridade: escolaridade,
+            profissao: profissao
         };
         debugger
         this.httpClient.post<{mensagem: string}>('http://localhost:3000/api/voluntarios', voluntario).subscribe((dados) =>{
@@ -56,5 +64,22 @@ export class VoluntarioService {
 
     getListaDeVoluntariosAtualizadaObservable() {
         return this.listaVoluntarioAtualizada.asObservable();
+    }
+
+    buscarCep(cep:string){
+        //Variavel cep apenas com digitos
+        cep = cep.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor
+        if(cep !== ''){
+            const validaCep = /^[0-9]{8}$/;
+
+            //Valida o formato  do CEP
+            if(validaCep.test(cep)){
+                return this.httpClient.get(`https://viacep.com.br/ws/${cep}/json`);
+            }
+        }
+
+        return of({});
     }
 }

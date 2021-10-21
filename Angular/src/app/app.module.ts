@@ -9,7 +9,7 @@ import { VacinadoComponent } from './vacinado/vacinado.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { VoluntarioInserirComponent } from './voluntario/voluntario-inserir/voluntario-inserir.component';
 import { VoluntarioListaComponent } from './voluntario/voluntario-lista/voluntario-lista.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VoluntarioService } from 'src/service/voluntario.service';
 
@@ -26,7 +26,8 @@ import { VoluntarioService } from 'src/service/voluntario.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [VoluntarioService],
   bootstrap: [AppComponent],
