@@ -14,7 +14,7 @@ const voluntarioSchema = mongoose.Schema({
   cidade: { type: String, required: true },
   uf: { type: String, required: true },
   complemento: { type: String, required: false },
-  nascimento: { type: Date, required: true },
+  nascimento: { type: String, required: true },
   sexo: { type: String, required: true },
   escolaridade: { type: String, required: true },
   profissao: { type: String, required: true }

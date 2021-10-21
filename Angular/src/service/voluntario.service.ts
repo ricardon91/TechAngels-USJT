@@ -32,7 +32,7 @@ export class VoluntarioService {
             cidade: string,
             uf: string,
             complemento: string,
-            nascimento: Date,
+            nascimento: string,
             sexo: string,
             escolaridade: string,
             profissao: string

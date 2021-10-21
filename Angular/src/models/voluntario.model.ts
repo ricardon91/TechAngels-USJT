@@ -10,7 +10,7 @@ export interface Voluntario{
     cidade: string,
     uf: string
     complemento: string,
-    nascimento: Date,
+    nascimento: string,
     sexo: string,
     escolaridade: string
     profissao: string
