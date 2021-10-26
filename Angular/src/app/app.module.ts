@@ -12,6 +12,10 @@ import { VoluntarioListaComponent } from './voluntario/voluntario-lista/voluntar
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VoluntarioService } from 'src/service/voluntario.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,9 @@ import { VoluntarioService } from 'src/service/voluntario.service';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,    
+    MatTableModule,
+    MatPaginatorModule   
   ],
   providers: [VoluntarioService],
   bootstrap: [AppComponent],

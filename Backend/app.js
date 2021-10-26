@@ -44,8 +44,14 @@ app.post('/api/voluntarios', (req, res, next) => {
 });
 
 app.get('/api/voluntarios', (req, res, next) => {
-    Voluntario.find().then(documents => {
+    const{page = 1, limit = 10 } = req.query;
+    Voluntario.find()
+    .limit(limit * 1)
+    .skip((page - 1) * limit)
+    .then(documents => {
+        console.log(documents);
         res.status(200).json({
+            total: documents.length,
             mensagem: "sucesso",
             voluntarios: documents
         });

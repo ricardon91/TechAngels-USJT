@@ -1,3 +1,49 @@
 <h1>Voluntários</h1>
 
 <button routerLink="cadastro-voluntario" class="nav-link" routerLinkActive="active">Cadastrar</button>
+<!-- <mat-form-field>
+    <mat-label>Filtrar por nome</mat-label>
+    <input matInput type="text" [(ngModel)]="filterValue"
+    (input)="findByName(filterValue)" placeholder="Search Username">
+</mat-form-field> -->
+
+<div *ngIf="dataSource">
+    <mat-table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.nome}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="fone">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Telefone</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.fone}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="endereco">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Endereço</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.endereco}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="numero">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Número</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.numero}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="uf">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>UF</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.uf}}</mat-cell>
+        </ng-container>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20, 30]" showFirstLastButtons>
+    </mat-paginator>
+</div>
