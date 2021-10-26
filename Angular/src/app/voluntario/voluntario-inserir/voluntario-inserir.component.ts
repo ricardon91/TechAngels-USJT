@@ -75,5 +75,4 @@ export class VoluntarioInserirComponent implements OnInit {
       profissao: form.value.profissao
     })
   }
-
 }

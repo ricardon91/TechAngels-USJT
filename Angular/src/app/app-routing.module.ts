@@ -4,10 +4,12 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { VacinadoComponent } from './vacinado/vacinado.component';
 import { VoluntarioInserirComponent } from './voluntario/voluntario-inserir/voluntario-inserir.component';
+import { VoluntarioListaComponent } from './voluntario/voluntario-lista/voluntario-lista.component';
 
 const routes: Routes = [
   {path:'', component: CabecalhoComponent, children:[
-    {path: 'cadastroVoluntario', component: VoluntarioInserirComponent},
+    {path: 'voluntario', component: VoluntarioListaComponent},
+    {path: 'voluntario/cadastro-voluntario', component: VoluntarioInserirComponent},
     {path: 'mapa', component: MapaComponent},
     {path: 'campanha', component: VacinadoComponent}    
   ]}

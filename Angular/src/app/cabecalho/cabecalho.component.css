@@ -1,7 +1,7 @@
 .page-container {
   display: flex;
   height: 100%;
-  background: rgb(35, 42, 58);
+  /* background: rgb(35, 42, 58); */
   min-height:         100%;  
 }
 
@@ -13,12 +13,18 @@
 .sidebar {
   height: 100%;
   width: 15%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgb(35, 42, 58);
   min-height:         100%;
 }
 
-.list-items {
+/* .list-items {
   padding-top: 100px;
+} */
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
 }
 
 .list-item {

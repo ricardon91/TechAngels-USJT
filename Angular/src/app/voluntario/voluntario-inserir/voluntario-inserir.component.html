@@ -9,8 +9,8 @@
     #voluntarioForm="ngForm" (submit)="adicionarVoluntario(voluntarioForm)">
     <fieldset class="module aligned">
       <div>
-        <div class="panel-heading">Cadastro de Voluntário</div>
-
+        <h1 class="titulo">Cadastro de Voluntário</h1>
+        <br>
         <div class="panel-body">
 
 
@@ -178,7 +178,10 @@
             <label class="col-md-2 control-label" for="Cadastrar"></label>
             <div class="col-md-8">
               <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Cadastrar</button>
-              <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+              <span class="color-gray small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+              <button id="limpar" name="limpar" class="btn btn-danger" type="Reset">Limpar</button>
+              <span class="color-gray small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+              <button id="voltar" name="voltar" class="btn btn-primary" routerLink="..">Voltar</button>
             </div>
           </div>
         </div>
