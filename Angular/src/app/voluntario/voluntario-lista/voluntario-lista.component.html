@@ -28,6 +28,11 @@
             <mat-cell *matCellDef="let row">{{row.fone}}</mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="profissao">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Profissão</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.profissao}}</mat-cell>
+        </ng-container>
+
         <ng-container matColumnDef="endereco">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Endereço</mat-header-cell>
             <mat-cell *matCellDef="let row">{{row.endereco}}</mat-cell>

@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class VoluntarioListaComponent implements OnInit {
   
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['nome', 'email', 'fone', 'endereco', 'numero', 'uf']
+  displayedColumns: string[] = ['nome', 'email', 'fone', 'profissao' ,'endereco', 'numero', 'uf']
   voluntarios: Voluntario[] = [];
   private voluntariosSubscription: Subscription;
 
