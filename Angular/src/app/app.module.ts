@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { VacinadoComponent } from './vacinado/vacinado.component';
-import { MapaComponent } from './mapa/mapa.component';
+
 import { VoluntarioInserirComponent } from './voluntario/voluntario-inserir/voluntario-inserir.component';
 import { VoluntarioListaComponent } from './voluntario/voluntario-lista/voluntario-lista.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MapaVoluntarioComponent } from './mapa/mapa-voluntario/mapa-voluntario.component';
+import { MapaPostoComponent } from './mapa/mapa-posto/mapa-posto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     VoluntarioListaComponent,
     CabecalhoComponent,
     VacinadoComponent,
-    MapaComponent
+    MapaVoluntarioComponent,
+    MapaPostoComponent
   ],
   imports: [
     BrowserModule,
