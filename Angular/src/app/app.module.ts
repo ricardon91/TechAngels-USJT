@@ -18,6 +18,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MapaVoluntarioComponent } from './mapa/mapa-voluntario/mapa-voluntario.component';
 import { MapaPostoComponent } from './mapa/mapa-posto/mapa-posto.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MapaPostoComponent } from './mapa/mapa-posto/mapa-posto.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,    
     MatTableModule,
-    MatPaginatorModule   
+    MatPaginatorModule,
+    ToastrModule.forRoot()   
   ],
   providers: [VoluntarioService],
   bootstrap: [AppComponent],

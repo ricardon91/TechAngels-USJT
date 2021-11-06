@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Voluntario } from 'src/models/voluntario.model';
 import { VoluntarioService } from 'src/service/voluntario.service';
 
@@ -10,7 +11,7 @@ import { VoluntarioService } from 'src/service/voluntario.service';
 })
 export class VoluntarioInserirComponent implements OnInit {
 
-  constructor(public voluntarioService: VoluntarioService) { }
+  constructor(public voluntarioService: VoluntarioService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     
@@ -41,12 +42,19 @@ export class VoluntarioInserirComponent implements OnInit {
       form.value.sexo,
       form.value.escolaridade,
       form.value.profissao
+    ).subscribe(result =>{
+      debugger
+        console.log(result);      
+        this.toastr.success("Voluntário cadastrado com sucesso!");
+      },
+      err =>{
+        this.toastr.error("Voluntário não cadastrado!", err);
+      }
     );
     form.resetForm();
   }
 
-  buscarCep(form: NgForm) {
-    debugger
+  buscarCep(form: NgForm) {    
     const cep = form.value.cep;
 
     if (cep != null && cep !== '') {
@@ -55,8 +63,7 @@ export class VoluntarioInserirComponent implements OnInit {
     }
   }
 
-  populaDadosForm(dados:any, form:any) { 
-    debugger   
+  populaDadosForm(dados:any, form:any) {       
     form.setValue({                 
       cep: dados.cep,
       endereco: dados.logradouro,

@@ -1,3 +1,4 @@
+import { map } from "rxjs/operators";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { of, Subject } from "rxjs";
@@ -41,7 +42,7 @@ export class VoluntarioService {
         sexo: string,
         escolaridade: string,
         profissao: string
-    ) {
+     ) {
         const voluntario: Voluntario = {
             nome: nome,
             fone: fone,
@@ -60,11 +61,12 @@ export class VoluntarioService {
             profissao: profissao
         };
         debugger
-        this.httpClient.post<{ mensagem: string }>('http://localhost:3000/api/voluntarios', voluntario).subscribe((dados) => {
-            console.log(dados.mensagem);
-            this.voluntarios.push(voluntario);
-            this.listaVoluntarioAtualizada.next([...this.voluntarios])
-        })
+        return this.httpClient.post<any>('http://localhost:3000/api/voluntarios', voluntario)
+        .pipe(map((dados:any) => {            
+            // this.voluntarios.push(voluntario);
+            // this.listaVoluntarioAtualizada.next([...this.voluntarios])
+            return dados            
+        }))        
     }
 
     getListaDeVoluntariosAtualizadaObservable() {
