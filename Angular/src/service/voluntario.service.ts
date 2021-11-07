@@ -1,8 +1,9 @@
 import { map } from "rxjs/operators";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { of, Subject } from "rxjs";
+import { Observable, of, Subject } from "rxjs";
 import { Voluntario } from "src/models/voluntario.model";
+import { environment as env } from '../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 
@@ -14,17 +15,21 @@ export class VoluntarioService {
     constructor(private httpClient: HttpClient) {
     }    
 
-    getVoluntarios(page: number, size: number) {
+    getVoluntariosPaginacao(page: number, size: number) {
         let params = new HttpParams();
 
         params = params.append('page', String(page));
         params = params.append('limit', String(size));
 
-        this.httpClient.get<{ mensagem: string, voluntarios: Voluntario[] }>('http://localhost:3000/api/voluntarios', {params}).subscribe((dados) => {
+        this.httpClient.get<{ mensagem: string, voluntarios: Voluntario[] }>(env.VOLUNTARIO_URL_BASE, {params}).subscribe((dados) => {
             this.voluntarios = dados.voluntarios;
             this.listaVoluntarioAtualizada.next([...this.voluntarios]);
         })
-    }      
+    }
+    
+    getVoluntarios():Observable<Voluntario[]> {
+        return this.httpClient.get<Voluntario[]>(env.VOLUNTARIO_MAPA_URL_BASE);        
+    } 
 
     adicionarVoluntario(
         nome: string,
@@ -61,7 +66,7 @@ export class VoluntarioService {
             profissao: profissao
         };
         debugger
-        return this.httpClient.post<any>('http://localhost:3000/api/voluntarios', voluntario)
+        return this.httpClient.post<any>(env.VOLUNTARIO_URL_BASE, voluntario)
         .pipe(map((dados:any) => {            
             // this.voluntarios.push(voluntario);
             // this.listaVoluntarioAtualizada.next([...this.voluntarios])

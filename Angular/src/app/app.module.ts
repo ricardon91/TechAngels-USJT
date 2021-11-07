@@ -19,6 +19,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MapaVoluntarioComponent } from './mapa/mapa-voluntario/mapa-voluntario.component';
 import { MapaPostoComponent } from './mapa/mapa-posto/mapa-posto.component';
 import { ToastrModule } from 'ngx-toastr';
+import { MapaService } from 'src/service/mapa.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatPaginatorModule,
     ToastrModule.forRoot()   
   ],
-  providers: [VoluntarioService],
+  providers: [VoluntarioService, MapaService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

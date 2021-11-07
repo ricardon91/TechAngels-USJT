@@ -44,7 +44,7 @@ app.post('/api/voluntarios', (req, res, next) => {
 });
 
 app.get('/api/voluntarios', (req, res, next) => {
-    const{page = 1, limit = 10 } = req.query;
+    const{page = 1, limit = 10000000000 } = req.query;
     Voluntario.find()
     .limit(limit * 1)
     .skip((page - 1) * limit)
@@ -55,6 +55,17 @@ app.get('/api/voluntarios', (req, res, next) => {
             mensagem: "sucesso",
             voluntarios: documents
         });
+    })
+});
+
+app.get('/api/voluntarios-mapa', (req, res, next) => {
+    const{page = 1, limit = 10000000000 } = req.query;
+    Voluntario.find()
+    .limit(limit * 1)
+    .skip((page - 1) * limit)
+    .then(documents => {
+        console.log(documents);
+        res.status(200).json(documents);
     })
 });
 
