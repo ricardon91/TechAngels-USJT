@@ -10,6 +10,7 @@ export const environment = {
   API_KEY: '41bd5d8a8433449c72ac1b3abf02f0ca',
   VOLUNTARIO_URL_BASE: 'http://localhost:3000/api/voluntarios',
   VOLUNTARIO_MAPA_URL_BASE: 'http://localhost:3000/api/voluntarios-mapa',
+  UBS_MAPA_URL_BASE: 'http://localhost:4000/api/ubs',
 };
 
 /*

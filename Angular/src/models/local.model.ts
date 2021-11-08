@@ -1,4 +1,4 @@
-export class LocalVoluntario {
+export class Local {
     constructor(
         public latitude: number,
         public longitude: number,
