@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -5,7 +6,7 @@ const mongoose = require('mongoose');
 const UBS = require('./models/ubs');
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://techangels:14231423@cluster0.evzk9.mongodb.net/ubs?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("Conexão OK")
     }).catch((e) => {

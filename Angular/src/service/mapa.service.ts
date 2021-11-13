@@ -3,7 +3,8 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Local } from "src/models/local.model";
-import { Ubs } from "src/models/Ubs.model";
+import { Ubs } from "src/models/ubs.model";
+
 import { environment as env } from '../environments/environment';
 
 @Injectable()
