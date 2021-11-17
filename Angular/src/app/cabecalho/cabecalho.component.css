@@ -21,10 +21,11 @@
   padding-top: 100px;
 } */
 
-img {
+.img_logo {
   display: block;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
+  cursor: pointer;  
 }
 
 .list-item {

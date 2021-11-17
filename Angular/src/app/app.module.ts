@@ -20,6 +20,7 @@ import { MapaVoluntarioComponent } from './mapa/mapa-voluntario/mapa-voluntario.
 import { MapaPostoComponent } from './mapa/mapa-posto/mapa-posto.component';
 import { ToastrModule } from 'ngx-toastr';
 import { MapaService } from 'src/service/mapa.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,13 @@ import { MapaService } from 'src/service/mapa.service';
     CabecalhoComponent,
     VacinadoComponent,
     MapaVoluntarioComponent,
-    MapaPostoComponent
+    MapaPostoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    //FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,    

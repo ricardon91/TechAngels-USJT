@@ -25,8 +25,7 @@ export class VoluntarioListaComponent implements OnInit {
     this.grid()
   }
 
-  grid() {
-    debugger
+  grid() {    
     this.voluntarioService.getVoluntariosPaginacao(1, 10000000);
     this.voluntariosSubscription = this.voluntarioService.getListaDeVoluntariosAtualizadaObservable()
       .subscribe((voluntarios: Voluntario[]) => {
